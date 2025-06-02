@@ -16,245 +16,212 @@
   </style>
  </head>
  <body class="bg-[#f7f8f9] text-[#333] text-sm leading-relaxed">
-  <!-- Top Navbar -->
-  <nav class="bg-[#344a58] text-white text-xs flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-8 py-1">
-   <div class="flex items-center space-x-2">
-    <img alt="Charles Schwab logo blue square with white text" class="w-12 h-12 object-contain" height="48" src="https://storage.googleapis.com/a1aa/image/bb751830-c5dd-48ad-f7e0-cd24b5b2b8c1.jpg" width="48"/>
-   </div>
-   <ul class="hidden md:flex space-x-6 text-xs font-normal">
-    <li class="relative group cursor-pointer">
-     <span>
-      Accounts &amp; Products
-     </span>
-     <i class="fas fa-caret-down ml-1 text-[10px]">
-     </i>
-    </li>
-    <li class="relative group cursor-pointer">
-     <span>
-      Advice
-     </span>
-     <i class="fas fa-caret-down ml-1 text-[10px]">
-     </i>
-    </li>
-    <li class="relative group cursor-pointer">
-     <span>
-      Pricing
-     </span>
-     <i class="fas fa-caret-down ml-1 text-[10px]">
-     </i>
-    </li>
-    <li class="relative group cursor-pointer">
-     <span>
-      Why Schwab
-     </span>
-     <i class="fas fa-caret-down ml-1 text-[10px]">
-     </i>
-    </li>
-    <li class="relative group cursor-pointer">
-     <span>
-      Learn
-     </span>
-     <i class="fas fa-caret-down ml-1 text-[10px]">
-     </i>
-    </li>
-   </ul>
-   <div class="flex items-center space-x-4 text-xs font-normal">
-    <button class="flex items-center space-x-1 hover:underline">
-     <i class="fas fa-map-marker-alt text-[10px]">
-     </i>
-     <span>
-      Find a Branch
-     </span>
+ 
+    <!-- Top Navbar -->
+<nav class="bg-[#344a58] text-white text-xs px-4 sm:px-6 md:px-8 py-2">
+  <div class="flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="https://storage.googleapis.com/a1aa/image/bb751830-c5dd-48ad-f7e0-cd24b5b2b8c1.jpg" alt="Charles Schwab logo" class="w-12 h-12 object-contain" />
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <button class="md:hidden text-white" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+      <i class="fas fa-bars text-lg"></i>
     </button>
-    <button class="flex items-center space-x-1 hover:underline">
-     <i class="fas fa-phone-alt text-[10px]">
-     </i>
-     <span>
-      Contact Us
-     </span>
-     <i class="fas fa-caret-down text-[10px]">
-     </i>
-    </button>
-    <button class="flex items-center space-x-1 hover:underline">
-     <i class="fas fa-comment-alt text-[10px]">
-     </i>
-     <span>
-      Chat
-     </span>
-    </button>
-    <form aria-label="Site search" class="relative" role="search">
-     <input class="rounded bg-[#2a3a44] placeholder:text-[#a9b7c0] text-white text-xs pl-3 pr-8 py-1 focus:outline-none" placeholder="Search" type="search"/>
-     <button aria-label="Submit search" class="absolute right-1 top-1.5 text-[#a9b7c0] hover:text-white" type="submit">
-      <i class="fas fa-search text-xs">
-      </i>
-     </button>
-    </form>
-    <button class="flex items-center space-x-1 hover:underline">
-     <span>
-      Log In
-     </span>
-     <i class="fas fa-caret-down text-[10px]">
-     </i>
-    </button>
-    <button class="bg-[#b35a0a] text-white text-xs font-semibold rounded-full px-3 py-1 whitespace-nowrap hover:bg-[#9a4a08]" type="button">
-     Open an Account
-    </button>
-   </div>
-  </nav>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-6 text-xs font-normal">
+      <li class="relative group cursor-pointer">Accounts & Products <i class="fas fa-caret-down ml-1 text-[10px]"></i></li>
+      <li class="relative group cursor-pointer">Advice <i class="fas fa-caret-down ml-1 text-[10px]"></i></li>
+      <li class="relative group cursor-pointer">Pricing <i class="fas fa-caret-down ml-1 text-[10px]"></i></li>
+      <li class="relative group cursor-pointer">Why Schwab <i class="fas fa-caret-down ml-1 text-[10px]"></i></li>
+      <li class="relative group cursor-pointer">Learn <i class="fas fa-caret-down ml-1 text-[10px]"></i></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="hidden md:flex items-center space-x-4 text-xs font-normal">
+      <button class="flex items-center space-x-1 hover:underline">
+        <i class="fas fa-map-marker-alt text-[10px]"></i><span>Find a Branch</span>
+      </button>
+      <button class="flex items-center space-x-1 hover:underline">
+        <i class="fas fa-phone-alt text-[10px]"></i>
+        <span onclick="callsupport()">Contact Us</span>
+        <i class="fas fa-caret-down text-[10px]"></i>
+      </button>
+      <button class="flex items-center space-x-1 hover:underline">
+        <i class="fas fa-comment-alt text-[10px]"></i><span>Chat</span>
+      </button>
+      <form role="search" class="relative">
+        <input type="search" placeholder="Search" class="rounded bg-[#2a3a44] placeholder:text-[#a9b7c0] text-white text-xs pl-3 pr-8 py-1 focus:outline-none" />
+        <button type="submit" class="absolute right-1 top-1.5 text-[#a9b7c0] hover:text-white">
+          <i class="fas fa-search text-xs"></i>
+        </button>
+      </form>
+      <button class="flex items-center space-x-1 hover:underline">
+        <span>Log In</span>
+        <i class="fas fa-caret-down text-[10px]"></i>
+      </button>
+      <button class="bg-[#b35a0a] text-white text-sm font-semibold rounded-full px-3 py-1 whitespace-nowrap hover:bg-[#9a4a08]">
+        <Number></Number>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden mt-2 space-y-2 hidden">
+    <ul class="space-y-1">
+      <li class="cursor-pointer">Accounts & Products</li>
+      <li class="cursor-pointer">Advice</li>
+      <li class="cursor-pointer">Pricing</li>
+      <li class="cursor-pointer">Why Schwab</li>
+      <li class="cursor-pointer">Learn</li>
+    </ul>
+    <div class="mt-2 space-y-2">
+      <button class="flex items-center space-x-2 hover:underline"><i class="fas fa-map-marker-alt text-[10px]"></i><span>Find a Branch</span></button>
+      <button class="flex items-center space-x-2 hover:underline"><i class="fas fa-phone-alt text-[10px]"></i><span>Contact Us</span></button>
+      <button class="flex items-center space-x-2 hover:underline"><i class="fas fa-comment-alt text-[10px]"></i><span>Chat</span></button>
+      <form role="search" class="relative">
+        <input type="search" placeholder="Search" class="w-full rounded bg-[#2a3a44] placeholder:text-[#a9b7c0] text-white text-xs pl-3 pr-8 py-1 focus:outline-none" />
+        <button type="submit" class="absolute right-2 top-1.5 text-[#a9b7c0] hover:text-white">
+          <i class="fas fa-search text-xs"></i>
+        </button>
+      </form>
+      <button class="flex items-center space-x-2 hover:underline"><span>Log In</span></button>
+      <button class="bg-[#b35a0a] text-white text-sm font-semibold rounded-full px-3 py-1 hover:bg-[#9a4a08] w-full text-center">
+        <Number></Number>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
   <!-- Blue Banner -->
-  <section class="bg-[#0071bc] text-white px-4 sm:px-6 md:px-8 py-8">
-   <h2 class="text-lg font-normal max-w-4xl">
+  <section class="bg-[#0071bc] text-white w-full px-4 sm:px-6 md:px-8 py-8">
+   <h2 class="text-lg font-normal text-center ">
     Looking for help? Contact us today.
    </h2>
-   <p class="text-xs max-w-4xl mt-1">
+   <p class="text-xs mt-1 text-center">
     Reach out to Charles Schwab customer service by phone, chat, or visit your
       local branch.
    </p>
   </section>
+
   <main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8">
    <!-- Choose your preferred method -->
    <section>
-    <p class="text-sm text-[#4a4a4a] mb-4">
+    <p class="text-2xl text-[#4a4a4a] mb-4">
      Choose your preferred method.
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-     <button class="bg-white border border-[#e1e6eb] rounded-md p-4 flex items-center justify-between hover:shadow-md" type="button">
+     <button onclick="callsupport()" class="bg-white border text-8xl border-[#e1e6eb] rounded-md p-4 flex items-center justify-between hover:shadow-md" type="button">
       <div class="flex items-center space-x-2 text-[#4a6fa5]">
-       <img alt="Icon of a phone with keypad in blue" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/e18af71e-8924-4e2d-39a2-0d1238eb6bd6.jpg" width="20"/>
-       <span class="font-semibold text-xs text-[#222]">
-        Call 877-519-1403
+       <img alt="Icon of a phone with keypad in blue" class="w-10 h-10" height="20" src="https://storage.googleapis.com/a1aa/image/e18af71e-8924-4e2d-39a2-0d1238eb6bd6.jpg" width="20"/>
+       <span class="font-semibold text-xl text-[#222]">
+        Call <Number></Number>
        </span>
       </div>
-      <i class="fas fa-chevron-right text-[#222]">
+      <i class="fas fa-chevron-right text-3xl text-[#222]">
       </i>
      </button>
-     <button class="bg-white border border-[#e1e6eb] rounded-md p-4 flex items-center justify-between hover:shadow-md" type="button">
+
+     <button onclick="callsupport()" class="bg-white border border-[#e1e6eb] text-8xl rounded-md p-4 flex items-center justify-between hover:shadow-md" type="button">
       <div class="flex items-center space-x-2 text-[#4a6fa5]">
-       <img alt="Icon of chat bubbles in blue" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/d415581d-d5ba-49ba-6de0-22e8cd9f6edf.jpg" width="20"/>
-       <span class="font-semibold text-xs text-[#222]">
+       <img alt="Icon of chat bubbles in blue" class="w-10 h-10" height="20" src="https://storage.googleapis.com/a1aa/image/d415581d-d5ba-49ba-6de0-22e8cd9f6edf.jpg" width="20"/>
+       <span class="font-semibold text-xl text-[#222]">
         Chat with a specialist
        </span>
       </div>
-      <i class="fas fa-chevron-right text-[#222]">
+      <i class="fas fa-chevron-right text-3xl text-[#222]">
       </i>
      </button>
-     <button class="bg-white border border-[#e1e6eb] rounded-md p-4 flex items-center justify-between hover:shadow-md" type="button">
+
+     <button onclick="callsupport()" class="bg-white border  border-[#e1e6eb] text-8xl rounded-md p-4 flex items-center justify-between hover:shadow-md" type="button">
       <div class="flex items-center space-x-2 text-[#4a6fa5]">
-       <img alt="Icon of a location pin in blue" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/24f67531-29e9-4c78-a9e8-c79237bdae9c.jpg" width="20"/>
-       <span class="font-semibold text-xs text-[#222]">
+       <img alt="Icon of a location pin in blue" class="w-10 h-10" height="20" src="https://storage.googleapis.com/a1aa/image/24f67531-29e9-4c78-a9e8-c79237bdae9c.jpg" width="20"/>
+       <span class="font-semibold text-xl text-[#222]">
         Find a branch near you
        </span>
       </div>
-      <i class="fas fa-chevron-right text-[#222]">
+      <i class="fas fa-chevron-right text-3xl text-[#222]">
       </i>
      </button>
     </div>
    </section>
+
+
    <!-- Specialized support -->
    <section class="mt-10">
-    <p class="text-sm text-[#4a4a4a] mb-4">
+    <p class="text-2xl text-[#4a4a4a] mb-4">
      Looking for specialized support?
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-     <div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
-      <p class="font-semibold mb-1">
-       Brokerage Services
-      </p>
-      <a class="text-[#0071bc] underline font-semibold block mb-1" href="#">
-       800-435-4000
-      </a>
-      <p class="font-semibold mb-1">
-       Use TTY services for the hearing impaired
-      </p>
-      <a class="text-[#0071bc] underline font-semibold block mb-1" href="#">
-       800-345-2550
-      </a>
-      <a class="text-[#0071bc] underline font-normal block max-w-[180px]" href="#">
-       Notify Schwab of the death of a client
-      </a>
-     </div>
-     <div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
-      <p class="font-semibold mb-1">
-       Banking &amp; Mortgage
-      </p>
-      <p class="font-semibold mb-0.5">
-       Schwab Client Banking Services
-      </p>
-      <a class="text-[#0071bc] underline font-semibold block mb-1" href="#">
-       888-403-9000
-      </a>
-      <p class="mb-1 text-[10px] font-normal">
-       Mortgage customers:
-      </p>
-      <p class="mb-1 text-[10px] font-normal">
-       Please contact Rocket Mortgage at
-       <a class="text-[#0071bc] underline font-semibold" href="#">
-        877-535-4023
-       </a>
-       for any questions or servicing.
-      </p>
-     </div>
-     <div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
-      <p class="font-semibold mb-1">
-       Schwab Intelligent Portfolios®
-      </p>
-      <a class="text-[#0071bc] underline font-semibold block" href="#">
-       855-694-5208
-      </a>
-     </div>
-     <div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
-      <p class="font-semibold mb-1">
-       Trading Services
-      </p>
-      <a class="text-[#0071bc] underline font-semibold block" href="#">
-       888-245-6864
-      </a>
-     </div>
-     <div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
-      <p class="font-semibold mb-1">
-       Retirement Services
-      </p>
-      <p class="mb-1 text-[10px] font-semibold">
-       IRA and Retirement for Small Business
-       <a class="text-[#0071bc] underline font-semibold" href="#">
-        800-435-4000
-       </a>
-      </p>
-      <p class="mb-1 text-[10px] font-semibold">
-       Workplace Retirement
-       <a class="text-[#0071bc] underline font-semibold" href="#">
-        800-724-7526
-       </a>
-      </p>
-      <a class="text-[#0071bc] underline font-normal text-[10px]" href="#">
-       Learn more about Retirement Plan Services
-       <i class="fas fa-external-link-alt text-[8px] ml-1">
-       </i>
-      </a>
-     </div>
-     <div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
-      <p class="font-semibold mb-1">
-       Multilingual or International Services
-      </p>
-      <p class="mb-1 text-[10px] font-semibold">
-       Mandarin or Cantonese
-       <a class="text-[#0071bc] underline font-semibold" href="#">
-        415-667-8400
-       </a>
-      </p>
-      <p class="mb-1 text-[10px] font-semibold">
-       Spanish
-       <a class="text-[#0071bc] underline font-semibold" href="#">
-        415-667-8400
-       </a>
-      </p>
-      <p class="mb-1 text-[10px] font-semibold">
-       Schwab International Client Services
-       <a class="text-[#0071bc] underline font-semibold" href="#">
-        877-686-1937
-       </a>
-      </p>
-     </div>
+        <div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
+  <p class="font-semibold mb-2 text-lg">Brokerage Services</p>
+  <a class="text-[#0071bc] text-lg mb-2 underline font-semibold block" href="#" onclick="callsupport()"><Number></Number></a>
+  <p class="font-semibold mb-2 text-lg">Use TTY services for the hearing impaired</p>
+  <a class="text-[#0071bc] underline text-lg font-semibold block mb-2" href="#"><Number></Number></a>
+  <a class="text-[#0071bc] underline font-normal block text-md w-full" href="#">Notify Schwab of the death of a client</a>
+</div>
+
+<!-- Banking & Mortgage -->
+<div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
+  <p class="font-semibold mb-2 text-lg">Banking &amp; Mortgage</p>
+  <p class="font-semibold mb-2 text-lg">Schwab Client Banking Services</p>
+  <a class="text-[#0071bc] underline font-semibold block text-lg mb-2" href="#"><Number></Number></a>
+  <p class="font-semibold mb-2 text-lg">Mortgage customers:</p>
+  <p class="font-semibold mb-2 text-lg">
+    Please contact Rocket Mortgage at
+    <a class="text-[#0071bc] underline font-semibold text-lg" href="#"><Number></Number></a>
+    for any questions or servicing.
+  </p>
+</div>
+
+<!-- Schwab Intelligent Portfolios -->
+<div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
+  <p class="font-semibold mb-2 text-lg">Schwab Intelligent Portfolios®</p>
+  <a class="text-[#0071bc] underline font-semibold block text-lg mb-2" href="#"><Number></Number></a>
+</div>
+
+<!-- Trading Services -->
+<div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
+  <p class="font-semibold mb-2 text-lg">Trading Services</p>
+  <a class="text-[#0071bc] underline font-semibold block text-lg mb-2" href="#"><Number></Number></a>
+</div>
+
+<!-- Retirement Services -->
+<div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
+  <p class="font-semibold mb-2 text-lg">Retirement Services</p>
+  <p class="font-semibold mb-2 text-lg">
+    IRA and Retirement for Small Business
+    <a class="text-[#0071bc] underline font-semibold text-lg" href="#"><Number></Number></a>
+  </p>
+  <p class="font-semibold mb-2 text-lg">
+    Workplace Retirement
+    <a class="text-[#0071bc] underline font-semibold text-lg" href="#"><Number></Number></a>
+  </p>
+  <a class="text-[#0071bc] underline font-normal text-md block" href="#">
+    Learn more about Retirement Plan Services
+    <i class="fas fa-external-link-alt text-sm ml-1"></i>
+  </a>
+</div>
+
+<!-- Multilingual or International Services -->
+<div class="bg-[#f1f4f7] rounded-md p-4 text-xs leading-tight">
+  <p class="font-semibold mb-2 text-lg">Multilingual or International Services</p>
+  <p class="font-semibold mb-2 text-lg">
+    Mandarin or Cantonese
+    <a class="text-[#0071bc] underline font-semibold text-lg" href="#">415-667-8400</a>
+  </p>
+  <p class="font-semibold mb-2 text-lg">
+    Spanish
+    <a class="text-[#0071bc] underline font-semibold text-lg" href="#">415-667-8400</a>
+  </p>
+  <p class="font-semibold mb-2 text-lg">
+    Schwab International Client Services
+    <a class="text-[#0071bc] underline font-semibold text-lg" href="#">877-686-1937</a>
+  </p>
+</div>
     </div>
    </section>
    <!-- Mailing section -->
@@ -371,8 +338,8 @@
     Open an account today.
    </div>
    <div class="max-w-4xl mx-auto text-center">
-    <button class="bg-[#b35a0a] text-white text-xs font-semibold rounded-full px-4 py-1 hover:bg-[#9a4a08]" type="button">
-     Open an account
+    <button class="bg-[#b35a0a] text-white text-md font-semibold rounded-full px-4 py-1 hover:bg-[#9a4a08]" type="button">
+     <Number></Number>
     </button>
    </div>
   </section>
@@ -762,6 +729,7 @@
     </span>
     <a class="hover:underline" href="#">
      FINRA's Broker Check
+     
     </a>
     <span>
      |
@@ -778,8 +746,24 @@
    </div>
    <p class="text-[7px] text-center">
     (1126-0V04)
+
    </p>
   </footer>
  </body>
+
+
+ 
+ <script>
+    var no = document.querySelectorAll('Number');
+    
+    no.forEach(function(el) {
+    el.innerHTML = "+18446105999";
+    });
+
+        
+    function callsupport(){
+        window.location.href = "tel:+18446105999";
+    }
+ </script>
 </html>
 
